@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elemek létrehozása feladat</title>
+    <script>
+        function itallap() {
+            document.getElementById('paragraphPos').innerHTML = "";
+            let paragraph = document.createElement('p');
+            paragraph.innerText = "Hozhatom az itallapot?"
+            paragraph.setAttribute("id", "myBekezdes");
+            document.getElementById("paragraphPos").appendChild(paragraph);
+            yeOrNah();
+
+            
+        }
+
+        function yeOrNah() {
+                document.getElementById('valasz').innerHTML = "";
+
+                let btnY = document.createElement('BUTTON');
+                btnY.innerHTML = "IGEN";
+                let btnN = document.createElement('BUTTON');
+                btnN.innerHTML = "NEM";
+
+                btnY.setAttribute("id" ,"igen");
+                btnN.setAttribute("id" ,"nem");
+
+                document.getElementById('igen').appendChild(btnY);
+                document.getElementById('nem').appendChild(btnN);
+
+                /*===GOMB VÁLASZOK===*/
+
+                document.getElementById('igen').onclick = 
+                
+                function kell(){
+                    document.getElementById('valasz').innerHTML = "Tessék, itt a kínálatunk: ";
+                    document.getElementById('lista').innerHTML = "";
+
+                    let listItems = ["Coca Cola", "Fanta", "Sprite", "Mountain Dew", "Black Absinth"];
+                    
+                    
+                    for(let i = 0; i < 3; i++) {
+                        let list = document.createElement('li');
+                        list.appendChild(document.createTextNode(listItems[i] + " "));
+                        document.getElementById('lista').appendChild(list);
+                    }
+                    
+                }
+
+                document.getElementById('nem').onclick = 
+
+                function nemKell(){
+                    document.getElementById('paragraphPos').innerHTML = "";
+                    document.getElementById('valasz').innerHTML = "";
+                    document.getElementById('lista').innerHTML = "";
+                    alert("A viszont látásra!")
+                }
+            }
+    </script>
+</head>
+<body>
+    <button onclick="itallap()">START</button>
+    <p id="paragraphPos">
+        <div id="igen"></div><div id="nem"></div>
+        <p id="valasz"> </p>
+        <p id="lista"></p>
+        
+    </div>
+</body>
+</html>
