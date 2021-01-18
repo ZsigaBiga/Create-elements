@@ -41,7 +41,7 @@
                     let listItems = ["Coca Cola", "Fanta", "Sprite", "Mountain Dew", "Black Absinth"];
                     
                     
-                    for(let i = 0; i < 3; i++) {
+                    for(let i = 0; i < listItems.length; i++) {
                         let list = document.createElement('li');
                         list.appendChild(document.createTextNode(listItems[i] + " "));
                         document.getElementById('lista').appendChild(list);
@@ -59,13 +59,36 @@
                 }
             }
     </script>
+    <style>
+        body {
+            font-weight: 400;
+            font-size: larger;
+            background-color: thistle;
+            text-align: center;
+        }
+
+        #box {
+            height: auto;
+            width: 14%;
+            margin: 0px auto;
+        }
+
+        #lista {
+            position: relative;
+            text-align: left;
+            color: chocolate;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <button onclick="itallap()">START</button>
     <p id="paragraphPos">
         <div id="igen"></div><div id="nem"></div>
         <p id="valasz"> </p>
-        <p id="lista"></p>
+        <div id="box">
+            <p id="lista"></p>
+        </div>
         
     </div>
 </body>
